@@ -4,24 +4,50 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private float horizontal;
+    private float speed = 8f;
+    private float jumpingPower = 16f;
+    private bool isFacingRight = true;
 
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
-    // Start is called before the first frame update
-    private void Start()
+    void Update()
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        horizontal = Input.GetAxisRaw("Horizontal");
 
-    // Update is called once per frame
-    private void Update()
-    {
-        float dirX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
 
-        if (Input.GetButtonDown("Jump"))
+         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 13f);
+        }
+
+        
+
+        Flip();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            transform.Rotate(0f,180f,0f);
         }
     }
 }
