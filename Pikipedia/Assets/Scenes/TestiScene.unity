@@ -207,6 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Pikipedia/Assets/Scenes/TestiScene.unity
 --- !u!1 &641564475
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,3 +541,5 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes:Pikipedia/Assets/Scenes/SampleScene.unity
