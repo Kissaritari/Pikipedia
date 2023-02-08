@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet2 : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public int damage = 20;
@@ -15,10 +15,11 @@ public class Bullet2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo) 
     {
-        Player2 player = hitInfo.GetComponent<Player2>();
+        Player player = hitInfo.GetComponent<Player>();
+        
         if (player != null)
         {
-            player.TakeDamage2(damage);
+            player.TakeDamage(damage);
         }
         Destroy(gameObject);
     }
