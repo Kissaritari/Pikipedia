@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.3618801, y: -1.7460282}
+  m_AnchoredPosition: {x: -1.3618801, y: -1.746028}
   m_SizeDelta: {x: 2.314, y: 1.0935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500043526
@@ -648,9 +648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb078a5671af8f4a9d22af22208d911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1801070270}
   playerHealth: {fileID: 1961056413}
-  playerMovement: {fileID: 0}
+  TargetToFollow: {fileID: 1961056415}
 --- !u!1 &1941077895
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961056412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eedc4c90493ed048bb5a38e9979236b, type: 3}
   m_Name: 
