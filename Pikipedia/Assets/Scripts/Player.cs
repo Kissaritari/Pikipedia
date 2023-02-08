@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
 {
 
     public int health = 100;
-
+    public HealthBar healthBar;
 
     public void TakeDamage (int damage)
     {
         health -= damage;
-
+        healthBar.SetHealth( health );
         if (health <= 0)
         {
             Die();
