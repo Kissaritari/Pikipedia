@@ -8,26 +8,30 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
+    private string playerID;
+    public Player player;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    void Start()
+    {
+      playerID = player.playerID.ToString();
+    }
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal" + playerID);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump" + playerID) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-         if (Input.GetButtonDown("Jump"))
+         if (Input.GetButtonDown("Jump" + playerID))
         {
             rb.velocity = new Vector2(rb.velocity.x, 13f);
         }
-
-        
 
         Flip();
     }

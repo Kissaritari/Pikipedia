@@ -7,7 +7,14 @@ public class Player : MonoBehaviour
 
     public int health = 100;
     public HealthBar healthBar;
+    static int id = 0;
+    public int playerID;
 
+    void start() 
+    {
+        id ++;
+        playerID = id;
+    } 
     public void TakeDamage (int damage)
     {
         health -= damage;

@@ -858,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175441573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0, z: 0}
   m_LocalScale: {x: 1.2285012, y: 0.5719515, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,6 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthBar: {fileID: 616927303}
+  playerID: 2
 --- !u!70 &1728115056
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1177,6 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1728115055}
   rb: {fileID: 1728115057}
   groundCheck: {fileID: 582335448}
   groundLayer:
@@ -1629,6 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1961056419}
   rb: {fileID: 1961056416}
   groundCheck: {fileID: 754804746}
   groundLayer:
@@ -1664,6 +1667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthBar: {fileID: 1801070271}
+  playerID: 1
 --- !u!114 &1961056420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,6 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1175441574}
   bulletPrefab: {fileID: 3135736286047462622, guid: 2230e9fba48880348aada084ab75ffe5, type: 3}
+  player: {fileID: 1961056419}
 --- !u!1 &2006666215
 GameObject:
   m_ObjectHideFlags: 0
