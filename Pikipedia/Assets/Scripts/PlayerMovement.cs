@@ -8,9 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
-    private string playerID;
     public Player player;
-
+    public string playerID;
     private BoxCollider2D coll;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private LayerMask JumpableGround;
@@ -31,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-
        if(rb.velocity.magnitude > 2f && IsGrounded())
         {
             Walk.enabled = true;
@@ -40,13 +38,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Walk.enabled = false;
         }
-
         if (Input.GetButtonDown("Jump" + playerID) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, 13f);
             Jump.Play();
         }
-
         Flip();
     }
 
@@ -54,12 +50,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -68,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0f,180f,0f);
         }
     }
-
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, JumpableGround);
