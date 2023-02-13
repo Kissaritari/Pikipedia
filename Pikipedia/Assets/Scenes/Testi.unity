@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 252095513}
   - component: {fileID: 252095512}
   - component: {fileID: 252095517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpableGround:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   Jump: {fileID: 755758382}
   Walk: {fileID: 755758381}
 --- !u!82 &755758381
@@ -1131,7 +1131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac495aa4aad7f1a479a433778fb7c77c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
