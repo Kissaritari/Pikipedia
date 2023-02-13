@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask JumpableGround;
     [SerializeField] private AudioSource Jump;
     [SerializeField] private AudioSource Walk;
-
     [SerializeField] private LayerMask groundLayer;
 
     void Start()
