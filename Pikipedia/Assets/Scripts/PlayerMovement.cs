@@ -11,13 +11,18 @@ public class PlayerMovement : MonoBehaviour
     private string playerID;
     public Player player;
 
+    private BoxCollider2D coll;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask JumpableGround;
+    [SerializeField] private AudioSource Jump;
+    [SerializeField] private AudioSource Walk;
+
     [SerializeField] private LayerMask groundLayer;
 
     void Start()
     {
-      playerID = player.playerID.ToString();
+        playerID = player.playerID.ToString();
+        coll = GetComponent<BoxCollider2D>();
     }
     void Update()
     {
@@ -28,9 +33,19 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-         if (Input.GetButtonDown("Jump" + playerID))
+       if(rb.velocity.magnitude > 2f && IsGrounded())
+        {
+            Walk.enabled = true;
+        }
+        else
+        {
+            Walk.enabled = false;
+        }
+
+        if (Input.GetButtonDown("Jump" + playerID) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, 13f);
+            Jump.Play();
         }
 
         Flip();
@@ -53,5 +68,10 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = !isFacingRight;
             transform.Rotate(0f,180f,0f);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, JumpableGround);
     }
 }
