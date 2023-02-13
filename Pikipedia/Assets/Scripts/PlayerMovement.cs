@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource Jump;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, 13f);
+            Jump.Play();
         }
     }
 }
