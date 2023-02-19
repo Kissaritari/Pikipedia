@@ -11,16 +11,12 @@ public class powerup : MonoBehaviour
         
         if (collision.tag == "Testi")
         {
-            Pickup();
+            Pickup();            
         }
    }
 
    void Pickup()
    {
-
-        //Instantiate(pickupEffect, transform.position, transform.rotation);
-        //Debug.Log("Power up picker up!");
-
-        Destroy(gameObject);
+     Destroy(gameObject);
    }
 }
