@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public Transform firePoint;
     public GameObject bulletPrefab;
+=======
+
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+>>>>>>> Stashed changes
 
     // Update is called once per frame
     void Update()
@@ -14,10 +25,22 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+<<<<<<< Updated upstream
     }
 
     void Shoot() 
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+=======
+        
+        
+    }
+
+    void Shoot ()
+    {
+        // shooting logic
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+>>>>>>> Stashed changes
     }
 }
