@@ -15,10 +15,14 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+        
+        
     }
 
-    void Shoot() 
+    void Shoot()
     {
+        // shooting logic
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
     }
 }
