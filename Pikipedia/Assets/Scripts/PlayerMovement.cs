@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     public Player player;
     public string playerID;
-    private BoxCollider2D coll;
+    private CapsuleCollider2D coll;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private LayerMask JumpableGround;
     [SerializeField] private AudioSource Jump;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerID = player.playerID.ToString();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CapsuleCollider2D>();
     }
     void Update()
     {
