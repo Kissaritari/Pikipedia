@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 231445606}
   - component: {fileID: 231445605}
   - component: {fileID: 231445604}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: p1 hb (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2879,7 +2879,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -2897,7 +2897,7 @@ GameObject:
   - component: {fileID: 337488304}
   - component: {fileID: 337488303}
   - component: {fileID: 337488302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: p1 hb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3475,7 +3475,7 @@ GameObject:
   - component: {fileID: 988683110}
   - component: {fileID: 988683112}
   - component: {fileID: 988683111}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HB border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb078a5671af8f4a9d22af22208d911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1168393723}
+  sliderhealthBar: {fileID: 0}
   player: {fileID: 1695557824}
   TargetToFollow: {fileID: 1695557822}
 --- !u!1 &1168393718
@@ -3745,7 +3745,7 @@ GameObject:
   - component: {fileID: 1168393722}
   - component: {fileID: 1168393721}
   - component: {fileID: 1168393720}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthBar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb078a5671af8f4a9d22af22208d911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1168393723}
+  sliderhealthBar: {fileID: 0}
   player: {fileID: 755758383}
   TargetToFollow: {fileID: 755758379}
 --- !u!1 &1238803181
@@ -3902,7 +3902,7 @@ GameObject:
   - component: {fileID: 1238803182}
   - component: {fileID: 1238803184}
   - component: {fileID: 1238803183}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: backgroundColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4265,7 +4265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1649541142}
   - component: {fileID: 1649541141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

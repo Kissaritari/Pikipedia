@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class healthBar : MonoBehaviour
 {
-    public Slider healthBar;
+    public Slider sliderhealthBar;
     public Player player;
     
     public Transform TargetToFollow;
     private Vector3 Offset;
      private void Start()
     {
-        healthBar = GetComponent<Slider>();
-        healthBar.maxValue = player.health;
-        healthBar.value = player.health;
+        sliderhealthBar = GetComponent<Slider>();
+        sliderhealthBar.maxValue = player.health;
+        sliderhealthBar.value = player.health;
         
         Offset = transform.position - TargetToFollow.position;	
     }
@@ -28,8 +28,8 @@ public class HealthBar : MonoBehaviour
 	}
     public void SetHealth(int hp)
     {
-        healthBar.value = hp;
-        if ( healthBar.value <= 0 ) {
+        sliderhealthBar.value = hp;
+        if ( sliderhealthBar.value <= 0 ) {
             Destroy(gameObject);
         }
     }

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     public int health = 100;
-    public HealthBar healthBar;
+    public healthBar healthBar;
     static int id = 0;
     public int playerID;
 
