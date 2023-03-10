@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayMenu : MonoBehaviour
 {
     public static int rounds;
-    private static int rounds_max;
+    public static int rounds_max;
     public static int levels;
     public void setRounds()
     {
@@ -15,32 +15,46 @@ public class PlayMenu : MonoBehaviour
         if ( ClickedButtonName == "1Button")
         {
             rounds_max = 1;
+            rounds = 1;
         }
         else if (ClickedButtonName == "3Button")
         {
             rounds_max = 3;
+            rounds = 3;
         }
         else if (ClickedButtonName == "5Button")
         {
             rounds_max = 5;
+            rounds = 5;
         }
         else if (ClickedButtonName == "7Button")
         {
             rounds_max = 7;
+            rounds = 7;
         }   
     }
 
     public static void ChangeLevel()
     {
         rounds--;
-        if (rounds==0 && levels > 0) 
+
+        if (rounds == 0 && levels > 1) 
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            levels--;
             rounds = rounds_max;
         }
         else 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (levels >1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                SceneManager.LoadScene(6);
+            }
+            
         }
 
     }

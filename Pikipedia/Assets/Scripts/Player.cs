@@ -11,12 +11,16 @@ public class Player : MonoBehaviour
     public int health = 100;
     public healthBar healthBar;
     public int playerID;
+    public int player2points = 0;
+    public int player1points = 0;
 
 
     void Start() 
     {
-        Debug.Log(PlayMenu.rounds);
-        Debug.Log(PlayMenu.levels);
+        Debug.Log("Max rounds: " + PlayMenu.rounds_max);
+        Debug.Log("Rounds remaining: " + PlayMenu.rounds);
+        Debug.Log("Levels remaining: " +PlayMenu.levels);
+        Debug.Log("Player " + playerID + "id: " + playerID);
     } 
     
     public void TakeDamage (int damage)
