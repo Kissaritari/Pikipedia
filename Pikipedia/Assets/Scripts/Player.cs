@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class Player : MonoBehaviour
 {
 
     public int health = 100;
     public healthBar healthBar;
-    static int id = 0;
     public int playerID;
 
-    void start() 
+
+    void Start() 
     {
-        id ++;
-        playerID = id;
+        Debug.Log(PlayMenu.rounds);
+        Debug.Log(PlayMenu.levels);
     } 
+    
     public void TakeDamage (int damage)
     {
         health -= damage;
@@ -29,11 +32,9 @@ public class Player : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("Main Menu"); 
+        PlayMenu.ChangeLevel();
 
     }
     // Start is called before the first frame update
 
-
-    // Update is called once per fr
 }
