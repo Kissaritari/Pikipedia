@@ -8,24 +8,26 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public int health = 100; // Player's health
-    public healthBar healthBar; // Player's healthbar
-    public int playerID;
+    public int health = 100;    // Player's health
+    private healthBar PlayerHealthBar; //  Player's healthbar
+    public int playerID = 0;
 
-
+    void Awake()
+    {
+        //playerID = GetComponents<Player>().Length;  // sets the player Id to the total number of player objects in play
+     
+    }
 
     void Start() 
     {
-        Debug.Log("Max rounds: " + PlayMenu.rounds_max);
-        Debug.Log("Rounds remaining: " + PlayMenu.rounds);
-        Debug.Log("Levels remaining: " +PlayMenu.levels);
-        Debug.Log("Player " + playerID + "id: " + playerID);
+        PlayerHealthBar = transform.parent.GetChild(1).GetChild(0).GetComponent<healthBar>();
+        
     } 
     
     public void TakeDamage (int damage)
     {
         health -= damage;
-        healthBar.SetHealth( health );
+        PlayerHealthBar.SetHealth( health );
         if (health <= 0)
         {
             Die();

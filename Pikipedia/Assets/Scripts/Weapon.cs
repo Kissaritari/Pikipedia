@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform firePoint; // Make a point from which the weapon fires the bullet
+
+    private Transform firePoint;  // Make a point from which the weapon fires the bullet
     public GameObject bulletPrefab; // Make a bullet prefab
-    public Player player;
+    private Player player;
 
     // Update is called once per frame
+    private void Start() 
+    {
+        player = GetComponent<Player>();
+        firePoint = transform.GetChild(1);
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire" + player.playerID.ToString())) // When the fire button is pressed
