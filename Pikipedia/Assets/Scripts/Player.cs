@@ -8,11 +8,10 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public int health = 100;
-    public healthBar healthBar;
+    public int health = 100; // Player's health
+    public healthBar healthBar; // Player's healthbar
     public int playerID;
-    public int player2points = 0;
-    public int player1points = 0;
+
 
 
     void Start() 

@@ -10,7 +10,7 @@ public class healthBar : MonoBehaviour
     
     public Transform TargetToFollow; // The selected target (player) the healthbar follows
     private Vector3 Offset;
-     private void Start()
+    private void Start()
     {
         SliderHealthBar = GetComponent<Slider>();   // selects the slider component for the healthbar to use
         SliderHealthBar.maxValue = player.health;

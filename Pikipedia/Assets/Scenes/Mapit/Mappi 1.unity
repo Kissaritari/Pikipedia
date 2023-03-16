@@ -3001,7 +3001,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1161021388}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3159,7 +3159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6074aa6d3489de54b868df4615192577, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e56501c8725e3ce40b6cc2d21a9c533f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3256,8 +3256,6 @@ MonoBehaviour:
   health: 100
   healthBar: {fileID: 1168393724}
   playerID: 1
-  player2points: 0
-  player1points: 0
 --- !u!82 &755758384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3590,8 +3588,8 @@ RectTransform:
   m_LocalScale: {x: 0.21766521, y: 0.01123348, z: 0.0132158585}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 585084308}
   - {fileID: 1583529337}
+  - {fileID: 585084308}
   m_Father: {fileID: 337488305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4068,7 +4066,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1161021388}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4150,7 +4148,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.3111193
+  MinDistance: 1.4597245
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -4415,7 +4413,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e56501c8725e3ce40b6cc2d21a9c533f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6074aa6d3489de54b868df4615192577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4458,8 +4456,6 @@ MonoBehaviour:
   health: 100
   healthBar: {fileID: 1161021393}
   playerID: 2
-  player2points: 0
-  player1points: 0
 --- !u!114 &1695557825
 MonoBehaviour:
   m_ObjectHideFlags: 0
