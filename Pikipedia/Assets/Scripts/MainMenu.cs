@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Samuel Testi");
+        SceneManager.LoadScene("Mappi 1");
     }
 
     public void Credits()
