@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Player player;
+    [SerializeField] private AudioSource GunFire;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +15,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire" + player.playerID.ToString()))
         {
             Shoot();
+            GunFire.Play();
         }
         
        
