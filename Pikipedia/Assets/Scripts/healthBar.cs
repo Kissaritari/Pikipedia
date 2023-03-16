@@ -10,7 +10,7 @@ public class healthBar : MonoBehaviour
     
     public Transform TargetToFollow;
     private Vector3 Offset;
-     private void Start()
+    private void Start()
     {
         sliderhealthBar = GetComponent<Slider>();
         sliderhealthBar.maxValue = player.health;
