@@ -10,7 +10,7 @@ public class healthBar : MonoBehaviour
     
     private Transform TargetToFollow; // The selected target (player) the healthbar follows
     private Vector3 Offset;
-     private void Start()
+    private void Start()
     {
         player = transform.parent.parent.GetChild(0).GetComponent<Player>();
         TargetToFollow = player.transform;
