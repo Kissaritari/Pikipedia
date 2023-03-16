@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire" + player.playerID.ToString()))
+        if (Input.GetButtonDown("Fire" + player.playerID.ToString()) && player.playable != false)
         {
             Shoot();
             GunFire.Play();
@@ -25,7 +25,11 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         // shooting logic
+        /*/ if (PauseMenu.IsPaused == false)
+         {
+             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+         }
+         /**/
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
     }
 }

@@ -7,8 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public int damage = 20;
     public Rigidbody2D rb;
-    [SerializeField] private AudioSource HitSound;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb.velocity = transform.right * speed;
@@ -18,12 +17,16 @@ public class Bullet : MonoBehaviour
     {
         Player player = hitInfo.GetComponent<Player>();
         
-        if (player != null)
+        if (player != null && player.playable != false && PauseMenu.IsPaused == false)
         {
             player.TakeDamage(damage);
-            HitSound.Play();
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
 }

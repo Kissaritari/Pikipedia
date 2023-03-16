@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 
 
+
 public class Player : MonoBehaviour
 {
-
+    public bool playable = true;
     public int health = 100;
     public healthBar healthBar;
     public int playerID;
     public int player2points = 0;
     public int player1points = 0;
+    [SerializeField] private AudioSource HitSound;
+    [SerializeField] private AudioSource Death2;
 
 
     void Start() 
@@ -25,16 +28,24 @@ public class Player : MonoBehaviour
     
     public void TakeDamage (int damage)
     {
+        HitSound.Play();
         health -= damage;
         healthBar.SetHealth( health );
         if (health <= 0)
         {
-            Die();
+            playable = false;
+            StartCoroutine(Die());
+            Death2.Play();
         }
     }
 
-    void Die()
+    IEnumerator Die()
     {
+        
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(2);
+        Destroy(healthBar);
         Destroy(gameObject);
         PlayMenu.ChangeLevel();
 
