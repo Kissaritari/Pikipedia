@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Testi
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Lava
+  - HB
   - 
   - 
   - 
@@ -38,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 36667245
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HB
+    uniqueID: 2914326331
+    locked: 0
+  - name: Ground
+    uniqueID: 1129591995
+    locked: 0
+  - name: UI
+    uniqueID: 1811537181
     locked: 0
