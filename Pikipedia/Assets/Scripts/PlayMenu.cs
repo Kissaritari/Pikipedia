@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+
 public class PlayMenu : MonoBehaviour
 {
     public static int rounds; // Remaining rounds
     public static int rounds_max; // Maximum rounds per level
     public static int levels; // Amount of levels
+
 
     public void setRounds()
     {
@@ -47,13 +49,13 @@ public class PlayMenu : MonoBehaviour
         }
         else 
         {
-            if (levels >1) // If there are still levels
+            if (levels >=1 && rounds > 0) // If there are still levels
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Load the same map while rounds > 0;
             }
             else
             {
-                SceneManager.LoadScene("Main Menu"); // Go back to main menu (for now)
+                SceneManager.LoadScene("Main Menu");
             }
         }
     }
