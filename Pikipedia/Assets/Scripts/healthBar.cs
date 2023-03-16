@@ -6,17 +6,21 @@ using UnityEngine.UI;
 public class healthBar : MonoBehaviour
 {
     private Slider SliderHealthBar;
-    public Player player; // the player object whose health is tracked
+    private Player player; // the player object whose health is tracked
     
-    public Transform TargetToFollow; // The selected target (player) the healthbar follows
+    private Transform TargetToFollow; // The selected target (player) the healthbar follows
     private Vector3 Offset;
      private void Start()
     {
+        player = transform.parent.parent.GetChild(0).GetComponent<Player>();
+        TargetToFollow = player.transform;
+        Debug.Log(transform.parent.parent.GetChild(0));
         SliderHealthBar = GetComponent<Slider>();   // selects the slider component for the healthbar to use
         SliderHealthBar.maxValue = player.health;
         SliderHealthBar.value = player.health;  // sets the max and current values to the healthbar
-        
+       
         Offset = transform.position - TargetToFollow.position;	// sets the starting position of the healthbar
+        
     }
 
     void LateUpdate ()
