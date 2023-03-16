@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump" + playerID) && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, 13f);
+            rb.velocity = new Vector2(rb.velocity.x, 14f);
             Jump.Play();
         }
         Flip();

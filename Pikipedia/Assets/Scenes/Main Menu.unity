@@ -1832,7 +1832,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.21960784}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.46666667}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0.7372549}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0.80784315}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2218,8 +2218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7cab1bdc1878149802584f711c75b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rounds: 0
-  levels: 0
 --- !u!1 &611905688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,8 +3988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7cab1bdc1878149802584f711c75b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rounds: 0
-  levels: 0
 --- !u!4 &1496405224
 Transform:
   m_ObjectHideFlags: 0

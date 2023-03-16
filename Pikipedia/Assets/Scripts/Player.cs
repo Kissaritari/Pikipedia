@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class Player : MonoBehaviour
 {
 
     public int health = 100;
     public healthBar healthBar;
-    static int id = 0;
     public int playerID;
+    public int player2points = 0;
+    public int player1points = 0;
 
-    void start() 
+
+    void Start() 
     {
-        id ++;
-        playerID = id;
+        Debug.Log("Max rounds: " + PlayMenu.rounds_max);
+        Debug.Log("Rounds remaining: " + PlayMenu.rounds);
+        Debug.Log("Levels remaining: " +PlayMenu.levels);
+        Debug.Log("Player " + playerID + "id: " + playerID);
     } 
+    
     public void TakeDamage (int damage)
     {
         health -= damage;
@@ -29,11 +36,9 @@ public class Player : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("Main Menu"); 
+        PlayMenu.ChangeLevel();
 
     }
     // Start is called before the first frame update
 
-
-    // Update is called once per fr
 }
