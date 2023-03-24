@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+
 public class PlayMenu : MonoBehaviour
 {
-    public static int rounds;
-    public static int rounds_max;
-    public static int levels;
+    public static int rounds; // Remaining rounds
+    public static int rounds_max; // Maximum rounds per level
+    public static int levels; // Amount of levels
+
+
     public void setRounds()
     {
-        string ClickedButtonName = EventSystem.current.currentSelectedGameObject.name;
-        if ( ClickedButtonName == "1Button")
+        string ClickedButtonName = EventSystem.current.currentSelectedGameObject.name; // get the name of the clicked object
+        if ( ClickedButtonName == "1Button")  // If it's 1button 
         {
-            rounds_max = 1;
+            rounds_max = 1; // set the max rounds to 1
             rounds = 1;
         }
-        else if (ClickedButtonName == "3Button")
+        else if (ClickedButtonName == "3Button") // etc.
         {
             rounds_max = 3;
             rounds = 3;
@@ -36,38 +39,37 @@ public class PlayMenu : MonoBehaviour
 
     public static void ChangeLevel()
     {
-        rounds--;
+        
+        rounds--; // Subtract from the remaining rounds
         Player.ID = 0;
 
-        if (rounds == 0 && levels > 1) 
+        if (rounds == 0 && levels > 1) // If there are no remaining rounds and there are levels left
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-            levels--;
-            rounds = rounds_max;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); // Load the scene of the next map
+            levels--; // Subtract from the remaining levels
+            rounds = rounds_max; // Set the current rounds to the max in the new map
         }
         else 
         {
-            if (levels >1)
+            if (levels >=1 && rounds > 0) // If there are still levels
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Load the same map while rounds > 0;
             }
             else
             {
-                SceneManager.LoadScene(6);
+                SceneManager.LoadScene("Main Menu");
             }
-            
         }
-
     }
 
     public void setLevels ()
     {
-        string ClickedButtonName = EventSystem.current.currentSelectedGameObject.name;
-        if (ClickedButtonName == "Level1")
+        string ClickedButtonName = EventSystem.current.currentSelectedGameObject.name; // get the name of the clicked object
+        if (ClickedButtonName == "Level1")// If it's level1 
         {
-            levels = 1;
+            levels = 1; // set the levels to 1
         }
-        else if (ClickedButtonName == "Level2")
+        else if (ClickedButtonName == "Level2") // etc.
         {
             levels = 2;
         }
@@ -84,7 +86,4 @@ public class PlayMenu : MonoBehaviour
             levels = 5;
         }
     }
-
-
-
 }

@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int health = 100;
-    private healthBar PlayerHealthBar;
+
+    public int health = 100; // Player's health
+    private healthBar PlayerHealthBar; //  Player's healthbar
     public static int ID = 0;
-    public int playerID;
- 
+    public int playerID = 0;
 
 
     void Awake()
