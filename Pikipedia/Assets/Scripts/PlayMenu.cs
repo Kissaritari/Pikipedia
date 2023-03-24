@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PlayMenu : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayMenu : MonoBehaviour
     public static int rounds; // Remaining rounds
     public static int rounds_max; // Maximum rounds per level
     public static int levels; // Amount of levels
+
 
 
     public void setRounds()
@@ -35,6 +37,8 @@ public class PlayMenu : MonoBehaviour
             rounds_max = 7;
             rounds = 7;
         }   
+        Debug.Log(rounds);
+        
     }
 
     public static void ChangeLevel()
@@ -85,5 +89,7 @@ public class PlayMenu : MonoBehaviour
         {
             levels = 5;
         }
+        Debug.Log(levels);
+        
     }
 }
