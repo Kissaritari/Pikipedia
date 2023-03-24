@@ -37,6 +37,7 @@ public class PlayMenu : MonoBehaviour
     public static void ChangeLevel()
     {
         rounds--;
+        Player.ID = 0;
 
         if (rounds == 0 && levels > 1) 
         {

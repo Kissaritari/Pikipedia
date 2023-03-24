@@ -9,12 +9,16 @@ public class Player : MonoBehaviour
 {
     public int health = 100;
     private healthBar PlayerHealthBar;
-    public int playerID = 0;
+    public static int ID = 0;
+    public int playerID;
+ 
+
 
     void Awake()
     {
-        //playerID = GetComponents<Player>().Length;  // sets the player Id to the total number of player objects in play
-     
+        ID ++;
+        playerID = ID;     // sets the player Id
+        
     }
 
     void Start() 
