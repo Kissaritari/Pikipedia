@@ -8,14 +8,17 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public int health = 100;    // Player's health
+    public int health = 100; // Player's health
     private healthBar PlayerHealthBar; //  Player's healthbar
+    public static int ID = 0;
     public int playerID = 0;
+
 
     void Awake()
     {
-        //playerID = GetComponents<Player>().Length;  // sets the player Id to the total number of player objects in play
-     
+        ID ++;
+        playerID = ID;     // sets the player Id
+        
     }
 
     void Start() 
