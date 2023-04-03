@@ -12,13 +12,14 @@ public class Player : MonoBehaviour
     private healthBar PlayerHealthBar; //  Player's healthbar
     public static int ID = 0;
     public int playerID = 0;
+    private Animator animator;
 
 
     void Awake()
     {
         ID ++;
         playerID = ID;     // sets the player Id
-        
+        animator = transform.GetComponent<Animator>(); // sets the animator component
     }
 
     void Start() 
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        animator.Play("die",0);
         Destroy(gameObject);
         PlayMenu.ChangeLevel();
 

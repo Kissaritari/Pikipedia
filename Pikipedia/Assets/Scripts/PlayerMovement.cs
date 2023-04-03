@@ -12,22 +12,23 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D coll;
     private Rigidbody2D rb;
     private LayerMask JumpableGround;
-    private AudioSource Jump;
-    private AudioSource Walk;
+    private AudioSource Jump_sound;
+    private AudioSource Walk_sound;
     //[SerializeField] private LayerMask groundLayer;    // not used?
     private float speed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
-
+    private Animator animator;
     void Start()
     {
         JumpableGround = LayerMask.GetMask("Ground");
         rb = GetComponent<Rigidbody2D>();                   // automatically gets various components
         coll = GetComponent<CapsuleCollider2D>();
-        Walk = GetComponents<AudioSource>()[0];
-        Jump = GetComponents<AudioSource>()[1];
+        Walk_sound = GetComponents<AudioSource>()[0];
+        Jump_sound = GetComponents<AudioSource>()[1];
         player = GetComponent<Player>();
         playerID = player.playerID;
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -36,15 +37,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            Jump.Play();
+            animator.Play("Black_Jump",0);
+            Jump_sound.Play();
         }
-       if(rb.velocity.magnitude > 2f && IsGrounded())   // if on ground and moving, play the walking sound, else stop playing it
+       if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
         {
-            Walk.enabled = true;
+            Walk_sound.enabled = true;
+            animator.Play("Black_Walk",0);
+            Debug.Log("Kävelee : )");
         }
         else
         {
-            Walk.enabled = false;
+            Walk_sound.enabled = false;
+      
         }
 
         Flip(); // flip the sprite if needed
@@ -62,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0f,180f,0f);
         }
     }
+    //rb.velocity.magnitude > 2f &&
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, JumpableGround);
