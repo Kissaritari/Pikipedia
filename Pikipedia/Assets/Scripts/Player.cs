@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 
 public class Player : MonoBehaviour
@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
     private healthBar PlayerHealthBar; //  Player's healthbar
     public static int ID = 0;
     public int playerID = 0;
-
+    private GameObject winner;
+    public Canvas PointsHUD;
+    public Text pointsText;
+   
 
     void Awake()
     {
@@ -23,7 +26,8 @@ public class Player : MonoBehaviour
 
     void Start() 
     {
-        PlayerHealthBar = transform.parent.GetChild(1).GetChild(0).GetComponent<healthBar>();
+        PointsHUD.enabled = true;
+        PlayerHealthBar = transform.parent.GetChild(1).GetChild(0).GetComponent<healthBar>(); // Gets the healthBar component from the player.
         
     } 
     
@@ -34,15 +38,33 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            winner = GameObject.FindWithTag("Player");
+            Debug.Log(winner);
+            AddPoints();
+
+            PlayMenu.ChangeLevel();
+            
         }
     }
 
     void Die()
     {
         Destroy(gameObject);
-        PlayMenu.ChangeLevel();
-
     }
-    // Start is called before the first frame update
+    
+    void AddPoints()
+    {
 
+        MainMenu.PointsDict.Add(winner.name, 1);
+        
+
+
+        foreach(var rivi in MainMenu.PointsDict)
+        {
+            Debug.Log($"Id: {rivi.Key}, Pisteet: {rivi.Value}");
+            pointsText.text = rivi.Value.ToString();
+        }
+       
+    }
+    
 }

@@ -14,7 +14,6 @@ public class healthBar : MonoBehaviour
     {
         player = transform.parent.parent.GetChild(0).GetComponent<Player>();
         TargetToFollow = player.transform;
-        Debug.Log(transform.parent.parent.GetChild(0));
         SliderHealthBar = GetComponent<Slider>();   // selects the slider component for the healthbar to use
         SliderHealthBar.maxValue = player.health;
         SliderHealthBar.value = player.health;  // sets the max and current values to the healthbar

@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class PlayMenu : MonoBehaviour
 {
-    public static int rounds; // Remaining rounds
+    public static int rounds = 3; // Remaining rounds
     public static int rounds_max; // Maximum rounds per level
-    public static int levels; // Amount of levels
+    public static int levels = 5; // Amount of levels
 
 
 

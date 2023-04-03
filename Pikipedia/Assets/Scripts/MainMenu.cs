@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static Dictionary<string, int> PointsDict = new Dictionary<string, int>();
     public void PlayGame()
     {
+        Player.ID = 0;
         SceneManager.LoadScene("Mappi 1"); // When starting playing load the first map
     }
 
