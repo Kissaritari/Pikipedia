@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab; // Make a bullet prefab
     private Player player;
     private Animator animator;
-    private float fireRate = 0.3f;
+    private float fireRate = 0.3f;  // Asetetaan muuttuja joka kertoo kuinka monta sekunttia kest‰‰ kunnes voi ampua uudestaan
     private float nextFire = 0f;
     // Update is called once per frame
     private void Start() 
