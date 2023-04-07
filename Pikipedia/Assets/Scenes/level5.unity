@@ -2978,17 +2978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerID: 
-  rb: {fileID: 0}
-  JumpableGround:
-    serializedVersion: 2
-    m_Bits: 0
-  Jump: {fileID: 0}
-  Walk: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!70 &755758381
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

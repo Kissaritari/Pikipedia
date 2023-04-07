@@ -731,17 +731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 755758383}
-  playerID: 
-  rb: {fileID: 755758377}
-  JumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
-  Jump: {fileID: 755758384}
-  Walk: {fileID: 755758385}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!70 &755758381
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -770,9 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc806c473151d424aa96b3848526afc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1095748366}
   bulletPrefab: {fileID: 3135736286047462622, guid: 2230e9fba48880348aada084ab75ffe5, type: 3}
-  player: {fileID: 755758383}
 --- !u!114 &755758383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,7 +773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthBar: {fileID: 1168393724}
   playerID: 1
 --- !u!82 &755758384
 AudioSource:
@@ -3868,9 +3854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb078a5671af8f4a9d22af22208d911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderhealthBar: {fileID: 0}
-  player: {fileID: 1695557824}
-  TargetToFollow: {fileID: 1695557822}
 --- !u!1 &1168393718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4028,9 +4011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb078a5671af8f4a9d22af22208d911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderhealthBar: {fileID: 0}
-  player: {fileID: 755758383}
-  TargetToFollow: {fileID: 755758379}
 --- !u!1 &1238803181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,7 +4590,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthBar: {fileID: 1161021393}
   playerID: 2
 --- !u!114 &1695557825
 MonoBehaviour:
@@ -4624,9 +4603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc806c473151d424aa96b3848526afc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 97412436}
   bulletPrefab: {fileID: 3135736286047462622, guid: 2230e9fba48880348aada084ab75ffe5, type: 3}
-  player: {fileID: 1695557824}
 --- !u!114 &1695557826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4639,17 +4616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1695557824}
-  playerID: 
-  rb: {fileID: 1695557820}
-  JumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
-  Jump: {fileID: 1695557827}
-  Walk: {fileID: 1695557828}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!82 &1695557827
 AudioSource:
   m_ObjectHideFlags: 0

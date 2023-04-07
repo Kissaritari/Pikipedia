@@ -1511,11 +1511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
-  Jump: {fileID: 755758382}
-  Walk: {fileID: 755758381}
 --- !u!82 &755758381
 AudioSource:
   m_ObjectHideFlags: 0

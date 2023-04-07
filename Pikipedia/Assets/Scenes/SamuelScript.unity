@@ -912,7 +912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655656ecc754e84fb4c0dcc868b5d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFacingRight: 1
 --- !u!114 &755758381
 MonoBehaviour:
   m_ObjectHideFlags: 0
