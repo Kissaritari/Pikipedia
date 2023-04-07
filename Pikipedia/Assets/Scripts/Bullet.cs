@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
-    public int damage = 20;
-    public Rigidbody2D rb;
+    public float speed = 20f; // Bullet speed
+    public int damage = 20; // Bullet's damage
+    public Rigidbody2D rb; // Formatting a rigidbody2d as rb
+
     
-    void Start()
+    void Start() // Called at the start
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * speed; // Bullet moves right with the given speed
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo) 
+    void OnTriggerEnter2D(Collider2D hitInfo) // Called when the bullet hits any collider
     {
-        Player player = hitInfo.GetComponent<Player>();
+        Player player = hitInfo.GetComponent<Player>(); // Bullet object recognized the player object on impact
         
-        if (player != null && player.playable != false && PauseMenu.IsPaused == false)
+        if (player != null) // If the bullet hits a player
         {
-            player.TakeDamage(damage);
-            Destroy(gameObject);
+            player.TakeDamage(damage); // Call the TakeDamage function
         }
-        if (player == null)
-        {
-            Destroy(gameObject);
-        }
-        
+        Destroy(gameObject); // Destroy the bullet on impact
     }
 
 }
