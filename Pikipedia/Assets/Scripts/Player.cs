@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Text levelsText1;
     public Text levelsText2;
     public Canvas RoundEndScreen;
+    public Canvas pointsBackground;
     public static int[] score ={0,0,0,0};
 
     void Awake()
@@ -34,7 +35,9 @@ public class Player : MonoBehaviour
 
     void Start() 
     {
+        PauseMenu.IsPaused = false;
         RoundEndScreen.enabled = false;
+        pointsBackground.enabled = true;
         PointsHUD.enabled = true;
         PlayerHealthBar = transform.parent.GetChild(1).GetChild(0).GetComponent<healthBar>(); // Gets the healthBar component from the player.
 
@@ -47,7 +50,9 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             
-            RoundEndScreen.enabled = true;                      
+            RoundEndScreen.enabled = true;
+            PauseMenu.IsPaused = true;
+            pointsBackground.enabled = false;                     
             AddPoints();
             pointsText1.text = score[0].ToString();
             pointsText2.text = score[1].ToString();
@@ -57,14 +62,18 @@ public class Player : MonoBehaviour
             pointsTextnew.anchoredPosition = new Vector3(-150.1767f, 54.35f, 0f);
             RectTransform pointsTextnew2 = pointsText2.GetComponent<RectTransform>();
             pointsTextnew2.anchoredPosition = new Vector3(149.82f, 54.35f, 0f);
-            Die();
+            StartCoroutine(Die());
+            
+
 
         }
     }
 
-    void Die()
+    IEnumerator Die()
     {
+        yield return new WaitForSeconds(2.5f);
         Destroy(transform.parent.gameObject);
+        PlayMenu.ChangeLevel();
     }
     
     void AddPoints()

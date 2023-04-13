@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire" + player.playerID.ToString())) // When the fire button is pressed
+        if (Input.GetButtonDown("Fire" + player.playerID.ToString()) && !PauseMenu.IsPaused) // When the fire button is pressed
         {
             Shoot();
         }     
