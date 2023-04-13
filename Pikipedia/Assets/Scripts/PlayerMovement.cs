@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            animator.Play("Black_Jump",0);          // play the jumping animation
+            animator.Play("Jump",0);          // play the jumping animation
             Jump_sound.Play();              // play the jumping sound
         }
        if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
@@ -61,7 +61,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);   // move the player object according to the values of horizontal and speed
-        animator.SetFloat("xinput", Mathf.Abs(rb.velocity.x));      // set the float value inside the animation controller 
+        if (IsGrounded()) {
+            animator.SetFloat("xinput", Mathf.Abs(rb.velocity.x));      // set the float value inside the animation controller 
+        
+        }
         
     }
     private void Flip()
