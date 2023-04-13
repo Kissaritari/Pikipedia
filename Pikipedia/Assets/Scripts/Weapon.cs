@@ -9,7 +9,9 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab; // Make a bullet prefab
     private Player player;
     private Animator animator;
-    // Update is called once per frame
+    private float fireRate = 0.3f;
+    private float nextFire = 0f;
+
     private void Start() 
     {
         player = GetComponent<Player>();
@@ -18,9 +20,10 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire" + player.playerID.ToString())) // When the fire button is pressed
+        if (Input.GetButtonDown("Fire" + player.playerID.ToString()) && Time.time > nextFire) // When the fire button is pressed
         {
             Shoot();
+            nextFire = Time.time + fireRate;
         }     
     }
 
