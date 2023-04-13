@@ -16,25 +16,28 @@ public class Player : MonoBehaviour
     public Canvas PointsHUD;
     public Text pointsText1;
     public Text pointsText2;
+    public Text levelsText1;
+    public Text levelsText2;
     public Canvas RoundEndScreen;
-    public int score;
-
-    
-   
+    public static int[] score ={0,0,0,0};
 
     void Awake()
     {
         ID ++;
-        playerID = ID;     // sets the player Id
-        
+        playerID = ID;    // sets the player  
+        pointsText1.text = score[0].ToString();
+        pointsText2.text = score[1].ToString();
+        levelsText1.text = score[2].ToString();
+        levelsText2.text = score[3].ToString();
     }
+    
 
     void Start() 
     {
         RoundEndScreen.enabled = false;
         PointsHUD.enabled = true;
         PlayerHealthBar = transform.parent.GetChild(1).GetChild(0).GetComponent<healthBar>(); // Gets the healthBar component from the player.
-        
+
     } 
     
     public void TakeDamage (int damage)
@@ -43,41 +46,50 @@ public class Player : MonoBehaviour
         PlayerHealthBar.SetHealth( health );
         if (health <= 0)
         {
-            Die();
-            RoundEndScreen.enabled = true;
-            winner = GameObject.FindWithTag("Player");
-            Debug.Log(winner.name);
+            
+            RoundEndScreen.enabled = true;                      
             AddPoints();
+            pointsText1.text = score[0].ToString();
+            pointsText2.text = score[1].ToString();
+            levelsText1.text = score[2].ToString();
+            levelsText2.text = score[3].ToString();
             RectTransform pointsTextnew = pointsText1.GetComponent<RectTransform>();
             pointsTextnew.anchoredPosition = new Vector3(-150.1767f, 54.35f, 0f);
             RectTransform pointsTextnew2 = pointsText2.GetComponent<RectTransform>();
             pointsTextnew2.anchoredPosition = new Vector3(149.82f, 54.35f, 0f);
+            Die();
+
         }
     }
 
     void Die()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
     
     void AddPoints()
     {
-        score += 1;
-        MainMenu.PointsDict.Add(winner.name, score);
-        foreach(var rivi in MainMenu.PointsDict)
+        if (playerID == 1)
         {
-            if (rivi.Key == "Player1")
-            {
-                pointsText1.text = rivi.Value.ToString();
-            }
-            if (rivi.Key == "Player2")
-            {
-                pointsText2.text = rivi.Value.ToString();
-            }
-            // Debug.Log($"Id: {rivi.Key}, Pisteet: {rivi.Value}");
-            
+            score[0] += 1;
+        }   
+        else if (playerID == 2)
+        {
+            score[1] += 1;
         }
-       
+        if (score[0]+score[1] == PlayMenu.rounds_max)
+        {
+            if (score[0] > score[1])
+            {
+                score[2] += 1;    
+            }
+            else
+            {
+                score[3] += 1;
+            }
+
+      
+        }
     }
     
 }

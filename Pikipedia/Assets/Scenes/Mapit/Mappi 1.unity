@@ -4427,6 +4427,7 @@ GameObject:
   - component: {fileID: 295260503}
   - component: {fileID: 295260502}
   - component: {fileID: 295260504}
+  - component: {fileID: 295260505}
   m_Layer: 28
   m_Name: Player1Points
   m_TagString: Untagged
@@ -4451,8 +4452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -806.18, y: 369.05}
-  m_SizeDelta: {x: 307.6313, y: 341.8907}
+  m_AnchoredPosition: {x: -824.65, y: 449}
+  m_SizeDelta: {x: 270.7075, y: 287.3841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295260502
 MonoBehaviour:
@@ -4510,6 +4511,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
+--- !u!114 &295260505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295260500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
 --- !u!1 &370586729
 GameObject:
@@ -6109,6 +6125,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 295260502}
     - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
+      propertyPath: levelsText1
+      value: 
+      objectReference: {fileID: 1225247899}
+    - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
+      propertyPath: levelsText2
+      value: 
+      objectReference: {fileID: 824610385}
+    - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
       propertyPath: pointsText1
       value: 
       objectReference: {fileID: 295260502}
@@ -6650,6 +6674,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 295260502}
     - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
+      propertyPath: levelsText1
+      value: 
+      objectReference: {fileID: 1225247899}
+    - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
+      propertyPath: levelsText2
+      value: 
+      objectReference: {fileID: 824610385}
+    - target: {fileID: 2280768425389787812, guid: 680a6a36a23542d4ca5facaf57eead04, type: 3}
       propertyPath: pointsText1
       value: 
       objectReference: {fileID: 295260502}
@@ -6741,7 +6773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1506327618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6799,7 +6831,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -6837,6 +6869,7 @@ GameObject:
   - component: {fileID: 1534156768}
   - component: {fileID: 1534156767}
   - component: {fileID: 1534156769}
+  - component: {fileID: 1534156770}
   m_Layer: 28
   m_Name: Player2Points
   m_TagString: Untagged
@@ -6861,7 +6894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 806.18, y: 369.05}
+  m_AnchoredPosition: {x: 844, y: 449}
   m_SizeDelta: {x: 307.6313, y: 341.8907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534156767
@@ -6920,6 +6953,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1534156770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534156765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
 --- !u!1 &1615703456
 GameObject:
@@ -7194,7 +7242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1802663296
 MonoBehaviour:
   m_ObjectHideFlags: 0
