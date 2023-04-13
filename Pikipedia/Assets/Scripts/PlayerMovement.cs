@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            animator.Play("Black_Jump",0);          // play the jumping animation
+            animator.Play("Jump",0);          // play the jumping animation
             Jump_sound.Play();              // play the jumping sound
         }
        if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it

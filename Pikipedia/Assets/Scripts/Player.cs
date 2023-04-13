@@ -13,13 +13,24 @@ public class Player : MonoBehaviour
     public static int ID = 0;
     public int playerID = 0;
     private Animator animator;
-
+    private string resource;
 
     void Awake()
     {
         ID ++;
         playerID = ID;     // sets the player Id
         animator = transform.GetComponent<Animator>(); // sets the animator component
+
+        if (playerID == 1)
+        {
+            resource = "B_Controller";
+        }
+        else if (playerID == 2)
+        {
+            resource = "Y_Controller";
+        }
+
+        animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController;
     }
 
     void Start() 
