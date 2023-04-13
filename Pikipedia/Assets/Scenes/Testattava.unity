@@ -5110,7 +5110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToSpawn:
-  - {fileID: 5020382560888800395, guid: 41bc72c960a7d974f99192a222b7db7b, type: 3}
+  - {fileID: 2612921266409626377, guid: 5a478f31f313d8c4eb71a88b8bc9bbe5, type: 3}
   - {fileID: 8801690713227332191, guid: ed2cb96bb2e15f7439852b87a05b1c53, type: 3}
   - {fileID: 5213800760631254232, guid: 7addb1147849aca438e417194422464a, type: 3}
 --- !u!1 &1622364978

@@ -21,6 +21,7 @@ public class Powerup : MonoBehaviour
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
         GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Collider2D>().enabled = false;
 
         yield return new WaitForSeconds(duration);
