@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8128804455557958931}
   m_Layer: 0
   m_Name: Player Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,8 +168,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7cf6ec5a5487c41a6a58988245d788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   playerID: 0
+  health: 100
+  pointsText1: {fileID: 0}
+  pointsText2: {fileID: 0}
+  levelsText1: {fileID: 0}
+  levelsText2: {fileID: 0}
+  RoundEndScreen: {fileID: 0}
+  pointsBackground: {fileID: 0}
+  GameEndScreen: {fileID: 0}
+  PointsHUD: {fileID: 0}
 --- !u!82 &2280768425389787834
 AudioSource:
   m_ObjectHideFlags: 0
@@ -601,7 +609,7 @@ GameObject:
   - component: {fileID: 2280768426734501951}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
