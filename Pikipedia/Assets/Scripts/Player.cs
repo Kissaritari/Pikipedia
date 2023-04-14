@@ -11,12 +11,17 @@ public class Player : MonoBehaviour
     public int playerID = 0;
     public int health = 100; // Player's health
     private healthBar PlayerHealthBar; //  Player's healthbar
+
     public static int[] score ={0,0,0,0}; // Players' score
 
     public Text pointsText1; // Initialize the points and levels
     public Text pointsText2;
     public Text levelsText1;
     public Text levelsText2;
+
+    private Animator animator;
+    private string resource;
+
 
     public Canvas RoundEndScreen; // Initialize canvases
     public Canvas pointsBackground;
@@ -26,11 +31,26 @@ public class Player : MonoBehaviour
     void Awake() 
     {
         ID ++;
+
         playerID = ID; // sets the player ID 
         pointsText1.text = score[0].ToString(); // Display points and levels
         pointsText2.text = score[1].ToString();
         levelsText1.text = score[2].ToString();
         levelsText2.text = score[3].ToString();
+
+        animator = transform.GetComponent<Animator>(); // sets the animator component
+
+        if (playerID == 1)
+        {
+            resource = "B_Controller";
+        }
+        else if (playerID == 2)
+        {
+            resource = "Y_Controller";
+        }
+
+        animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController;
+
     }
     
     void Start()  
@@ -86,9 +106,15 @@ public class Player : MonoBehaviour
 
     IEnumerator Die()
     {
+
+        animator.Play("die",0);
         yield return new WaitForSeconds(2.5f); // Wait for 2.5 seconds
         Destroy(transform.parent.gameObject);
         PlayMenu.ChangeLevel(); // Move on to the next level
+
+        
+
+
     }
     
     void AddPoints()
