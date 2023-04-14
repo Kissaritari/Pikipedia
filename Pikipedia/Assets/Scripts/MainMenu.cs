@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         Player.ID = 0;
+        for (int i = 0; i < Player.score.Length; i++) // Reset the points from the previous game
+            {
+                Player.score[i] = 0;
+            }
         SceneManager.LoadScene("Mappi 1"); // When starting playing load the first map
     }
 
