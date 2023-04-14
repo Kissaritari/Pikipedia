@@ -36,24 +36,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        horizontal = Input.GetAxisRaw("Horizontal" + playerID); 
+        horizontal = Input.GetAxisRaw("Horizontal" + playerID); // get the value of horizontal axis, to be used in the fixed update for movement 
         
 
-        if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
+        if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded()) // check for the players jump button and if they are grounded
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             animator.Play("Jump",0);          // play the jumping animation
             Jump_sound.Play();              // play the jumping sound
         }
-       if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
+       if(IsGrounded() && Mathf.Abs(rb.velocity.x) > 0.3f && !Walk_sound.isPlaying)   // if on ground and moving, play the walking sound, else stop playing it
         {
-            Walk_sound.enabled = true;
+            Walk_sound.Play();
         }
-        else
+        else if (Mathf.Abs(rb.velocity.x) < 0.01f && Walk_sound.isPlaying) // check if horizontal velocity is more than 0.01 and the walking sound is currently playing
         {
-            Walk_sound.enabled = false;
+            Walk_sound.Stop();
+        }
       
-        }
 
         Flip(); // flip the sprite if needed
     }
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    private void Flip()
+    private void Flip()   // might want to update this to use the "newer" built-in Flip() function in the future
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
