@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        animator.Play("die",0);
+        animator.Play("Die",0);
         Destroy(gameObject);
         PlayMenu.ChangeLevel();
 
