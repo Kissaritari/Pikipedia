@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     {
         Player player = hitInfo.GetComponent<Player>(); // Bullet object recognized the player object on impact
         
-        if (player != null) // If the bullet hits a player
+        if (player != null && !PauseMenu.IsPaused) // If the bullet hits a player
         {
             player.TakeDamage(damage); // Call the TakeDamage function
         }

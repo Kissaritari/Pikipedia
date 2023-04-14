@@ -20,7 +20,8 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire" + player.playerID.ToString()) && Time.time > nextFire) // When the fire button is pressed
+
+        if (Input.GetButtonDown("Fire" + player.playerID.ToString()) && !PauseMenu.IsPaused && Time.time > nextFire) // When the fire button is pressed
         {
             Shoot();
             nextFire = Time.time + fireRate;

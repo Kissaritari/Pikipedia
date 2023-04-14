@@ -35,28 +35,29 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-
-        horizontal = Input.GetAxisRaw("Horizontal" + playerID); 
-        
-
-        if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
+        if (!PauseMenu.IsPaused)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            animator.Play("Jump",0);          // play the jumping animation
-            Jump_sound.Play();              // play the jumping sound
-        }
-       if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
-        {
-            Walk_sound.enabled = true;
-        }
-        else
-        {
-            Walk_sound.enabled = false;
-      
-        }
+          horizontal = Input.GetAxisRaw("Horizontal" + playerID);
+          if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
+          {
+              rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+              animator.Play("Jump",0);          // play the jumping animation
+              Jump_sound.Play();              // play the jumping sound
+          }
+          if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
+          {
+              Walk_sound.enabled = true;
+          }
+          else
+          {
+              Walk_sound.enabled = false;
 
-        Flip(); // flip the sprite if needed
+          }
+
+          Flip(); // flip the sprite if needed
+        }
     }
+    
 
     private void FixedUpdate()
     {
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f && !PauseMenu.IsPaused)
         {
             isFacingRight = !isFacingRight;
             transform.Rotate(0f,180f,0f);
