@@ -36,6 +36,10 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        else if (health >= 100) // If players health exceeds 100 it gets set to 100
+        {
+            health = 100;
+        }
     }
 
     void Die()
