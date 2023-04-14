@@ -20,9 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mapit/Mappi 5.unity
     guid: 480a38cad75d7844ab54050738b627bf
-  - enabled: 1
-    path: Assets/Scenes/Play Menu.unity
-    guid: 2a9127261285d884e8c01d284983de60
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 170500ce058409940918f190ed9ed9bb
