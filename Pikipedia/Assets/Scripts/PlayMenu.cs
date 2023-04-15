@@ -9,14 +9,9 @@ using UnityEngine.UI;
 public class PlayMenu : MonoBehaviour
 {
     public static int rounds; // Remaining rounds
-    public static int rounds_max = 3; // Maximum rounds per level
-    public static int levels = 5; // Amount of levels
+    public static int rounds_max = 3; // Maximum rounds per level, set to 3 at start
+    public static int levels = 5; // Amount of levels to be played, set to 5 at start
 
-    void Start() 
-    {
-        Debug.Log("roundeja on: " + rounds_max);
-        Debug.Log("levelejä on: " + levels);
-    }
     public static void ChangeLevel()
     {
         
