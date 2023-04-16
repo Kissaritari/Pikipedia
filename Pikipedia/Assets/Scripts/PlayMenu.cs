@@ -35,7 +35,7 @@ public class PlayMenu : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Main Menu");
+                SceneManager.LoadScene("Main Menu"); // Go back to menu
             }
         }
     }

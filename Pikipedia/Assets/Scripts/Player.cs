@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public static int ID = 0; // Player's ID
-    public int playerID = 0;
+    public static int ID = 0; // The number to be used as playerID
+    public int playerID = 0; // Player's ID
     public int health = 100; // Player's health
     private healthBar PlayerHealthBar; //  Player's healthbar
 
@@ -49,13 +49,12 @@ public class Player : MonoBehaviour
             resource = "Y_Controller";
         }
 
-        animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController;
+        animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController; // changes the animator component
 
     } 
     
-    void Start()  
+    void Start()
     {
-        Debug.Log("Roundseja: " + PlayMenu.rounds + "Rounds max: "  + PlayMenu.rounds_max + "levelejä: " + PlayMenu.levels);
         PauseMenu.IsPaused = false; // Display certain canvases
         RoundEndScreen.enabled = false;
         pointsBackground.enabled = true;
@@ -111,15 +110,10 @@ public class Player : MonoBehaviour
 
     IEnumerator Die()
     {
-
         animator.Play("Die",0);
         yield return new WaitForSeconds(2.5f); // Wait for 2.5 seconds
         Destroy(transform.parent.gameObject);
         PlayMenu.ChangeLevel(); // Move on to the next level
-
-        
-
-
     }
     
     void AddPoints()
