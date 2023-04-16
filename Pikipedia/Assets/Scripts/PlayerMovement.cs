@@ -35,29 +35,30 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        if (!PauseMenu.IsPaused)
+if (!PauseMenu.IsPaused)
+        { 
+        horizontal = Input.GetAxisRaw("Horizontal" + playerID); // get the value of horizontal axis, to be used in the fixed update for movement 
+        
+
+        if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded()) // check for the players jump button and if they are grounded
         {
-          horizontal = Input.GetAxisRaw("Horizontal" + playerID);
-          if (Input.GetButtonDown("Jump" + playerID.ToString()) && IsGrounded())
-          {
-              rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-              animator.Play("Jump",0);          // play the jumping animation
-              Jump_sound.Play();              // play the jumping sound
-          }
-          if(IsGrounded() && Input.GetButtonDown("Horizontal" + playerID.ToString()))   // if on ground and moving, play the walking sound, else stop playing it
-          {
-              Walk_sound.enabled = true;
-          }
-          else
-          {
-              Walk_sound.enabled = false;
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            animator.Play("Jump",0);          // play the jumping animation
+            Jump_sound.Play();              // play the jumping sound
+        }
+       if(IsGrounded() && Mathf.Abs(rb.velocity.x) > 0.3f && !Walk_sound.isPlaying)   // if on ground and moving, play the walking sound, else stop playing it
+        {
+            Walk_sound.Play();
+        }
+        else if (Mathf.Abs(rb.velocity.x) < 0.01f && Walk_sound.isPlaying) // check if horizontal velocity is more than 0.01 and the walking sound is currently playing
+        {
+            Walk_sound.Stop();
+        }
+      
 
-          }
-
-          Flip(); // flip the sprite if needed
+        Flip(); // flip the sprite if needed
         }
     }
-    
 
     private void FixedUpdate()
     {
@@ -68,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    private void Flip()
+    private void Flip()   // might want to update this to use the "newer" built-in Flip() function in the future
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f && !PauseMenu.IsPaused)
         {

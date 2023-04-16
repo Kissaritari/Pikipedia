@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
     IEnumerator Die()
     {
 
-        animator.Play("die",0);
+        animator.Play("Die",0);
         yield return new WaitForSeconds(2.5f); // Wait for 2.5 seconds
         Destroy(transform.parent.gameObject);
         PlayMenu.ChangeLevel(); // Move on to the next level
