@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class healthBar : MonoBehaviour
 {
-    private Slider SliderHealthBar;
+    private Slider SliderHealthBar; // Healthbar slider
     private Player player; // the player object whose health is tracked
     
     private Transform TargetToFollow; // The selected target (player) the healthbar follows
     private Vector3 Offset;
     private void Start()
     {
-        player = transform.parent.parent.GetChild(0).GetComponent<Player>();
+        player = transform.parent.parent.GetChild(0).GetComponent<Player>(); // gets the Player script from the prefab
         TargetToFollow = player.transform;
         SliderHealthBar = GetComponent<Slider>();   // selects the slider component for the healthbar to use
         SliderHealthBar.maxValue = player.health;

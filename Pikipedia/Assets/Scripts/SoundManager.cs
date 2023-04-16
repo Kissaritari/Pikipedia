@@ -20,25 +20,19 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void changeVolume()
+    public void changeVolume() 
     {
         AudioListener.volume = volumeSlider.value;
         Save();
     }
 
-    private void Load()
+    private void Load() // Load the selected volume level
     {
         volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
-    private void Save()
+    private void Save() // Save the selected volume level
     {
         PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

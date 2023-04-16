@@ -29,9 +29,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu"); // Return back to main menu from other menus
     }
-    public void ToPlayMenu()
+    public void ToPlayMenu() // sets the default values for rounds and levels
     {
-        PlayMenu.rounds = 3;
+        PlayMenu.rounds = 3; 
         PlayMenu.rounds_max = 3;
         PlayMenu.levels = 5;
 
