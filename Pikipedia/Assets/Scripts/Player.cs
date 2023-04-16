@@ -51,10 +51,11 @@ public class Player : MonoBehaviour
 
         animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController;
 
-    }
+    } 
     
     void Start()  
     {
+        Debug.Log("Roundseja: " + PlayMenu.rounds + "Rounds max: "  + PlayMenu.rounds_max + "levelejä: " + PlayMenu.levels);
         PauseMenu.IsPaused = false; // Display certain canvases
         RoundEndScreen.enabled = false;
         pointsBackground.enabled = true;
@@ -111,7 +112,7 @@ public class Player : MonoBehaviour
     IEnumerator Die()
     {
 
-        animator.Play("die",0);
+        animator.Play("Die",0);
         yield return new WaitForSeconds(2.5f); // Wait for 2.5 seconds
         Destroy(transform.parent.gameObject);
         PlayMenu.ChangeLevel(); // Move on to the next level

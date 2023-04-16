@@ -29,4 +29,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu"); // Return back to main menu from other menus
     }
+    public void ToPlayMenu()
+    {
+        PlayMenu.rounds = 3;
+        PlayMenu.rounds_max = 3;
+        PlayMenu.levels = 5;
+
+    }
 }

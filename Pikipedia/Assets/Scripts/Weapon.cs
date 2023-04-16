@@ -31,6 +31,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); // Spawn the prefab in in the firePoint and the correct way around
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") | animator.GetCurrentAnimatorStateInfo(0).IsName("Fire") && animator.GetFloat("xinput") < 0.3f)
         animator.Play("Fire",0);
     }
 }
