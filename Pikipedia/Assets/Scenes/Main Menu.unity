@@ -285,6 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 112053182}
   - component: {fileID: 112053183}
+  - component: {fileID: 112053184}
   m_Layer: 5
   m_Name: Toggle5
   m_TagString: Untagged
@@ -362,6 +363,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &112053184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112053181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &113243998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,7 +2069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534740943}
   - component: {fileID: 534740945}
-  - component: {fileID: 534740944}
+  - component: {fileID: 534740946}
   m_Layer: 5
   m_Name: Toggle2
   m_TagString: Untagged
@@ -2086,22 +2099,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.9498901, y: -99.99584}
   m_SizeDelta: {x: -157.59229, y: 19}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &534740944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534740942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"value","value":{"$content":2,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!114 &534740945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2150,6 +2147,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &534740946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534740942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548314888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,6 +2537,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 593130177}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ToPlayMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &574427829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2882,6 +2903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597334721}
   - component: {fileID: 597334722}
+  - component: {fileID: 597334723}
   m_Layer: 5
   m_Name: Toggle3
   m_TagString: Untagged
@@ -2959,6 +2981,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &597334723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597334720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &621057768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +4938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425364972}
   - component: {fileID: 1425364973}
+  - component: {fileID: 1425364974}
   m_Layer: 5
   m_Name: Toggle1
   m_TagString: Untagged
@@ -4981,6 +5016,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1425364974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425364971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1468857576
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,7 +5039,6 @@ GameObject:
   - component: {fileID: 1468857577}
   - component: {fileID: 1468857578}
   - component: {fileID: 1468857579}
-  - component: {fileID: 1468857580}
   m_Layer: 5
   m_Name: Toggle1
   m_TagString: Untagged
@@ -5082,21 +5128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1468857580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468857576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!1 &1481554150
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,6 +5683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516354133}
   - component: {fileID: 1516354134}
+  - component: {fileID: 1516354135}
   m_Layer: 5
   m_Name: Toggle4
   m_TagString: Untagged
@@ -5729,6 +5761,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1516354135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516354132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c590863bcab921498b8415e07468fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1538021514
 GameObject:
   m_ObjectHideFlags: 0

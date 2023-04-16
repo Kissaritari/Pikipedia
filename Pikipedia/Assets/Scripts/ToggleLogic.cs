@@ -21,11 +21,18 @@ public class ToggleLogic : MonoBehaviour
     {
         if (_Toggle.isOn && _Toggle.group.name == "RoundsText")
         { 
-            PlayMenu.rounds_max = _Toggle.name[_Toggle.name.Length-1]; // rounds_max set to the last letter of the selected toggle's name
+            char charRound = _Toggle.name[_Toggle.name.Length-1];
+            int intRound = charRound - '0'; // convert char to int
+            PlayMenu.rounds_max = intRound; // rounds_max set to the last letter of the selected toggle's name
+            PlayMenu.rounds = PlayMenu.rounds_max;
+           
+          
         }
-        else if (_Toggle.isOn && _Toggle.group.name == "LevelsText")
+        if (_Toggle.isOn && _Toggle.group.name == "LevelsText")
         {
-            PlayMenu.levels = _Toggle.name[_Toggle.name.Length-1]; // levels set to the last letter of the selected toggle's name
+            char charLevel = _Toggle.name[_Toggle.name.Length-1];
+            int intLevel = charLevel - '0'; // convert char to int
+            PlayMenu.levels = intLevel; // levels set to the last letter of the selected toggle's name
         }
         
     }

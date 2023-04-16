@@ -51,10 +51,11 @@ public class Player : MonoBehaviour
 
         animator.runtimeAnimatorController = Resources.Load(resource) as RuntimeAnimatorController;
 
-    }
+    } 
     
     void Start()  
     {
+        Debug.Log("Roundseja: " + PlayMenu.rounds + "Rounds max: "  + PlayMenu.rounds_max + "levelejä: " + PlayMenu.levels);
         PauseMenu.IsPaused = false; // Display certain canvases
         RoundEndScreen.enabled = false;
         pointsBackground.enabled = true;
