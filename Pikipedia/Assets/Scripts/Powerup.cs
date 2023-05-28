@@ -12,8 +12,8 @@ public class Powerup : MonoBehaviour
 	{
         
         if (collision.tag == "Player") // when player touches the powerup
-        {
-			Effect(collision); // Method for powerups gameplay effecting stuff
+        {  
+            Effect(collision); // Method for powerups gameplay effecting stuff
 			StartCoroutine( Pickup(collision) ); // Method for removing the powerup      
         }
 	}

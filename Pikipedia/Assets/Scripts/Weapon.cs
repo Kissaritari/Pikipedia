@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     private Animator animator;
     private float fireRate = 0.3f;
     private float nextFire = 0f;
+    [SerializeField] private AudioSource shootingSound;
 
     private void Start() 
     {
@@ -33,5 +34,6 @@ public class Weapon : MonoBehaviour
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); // Spawn the prefab in in the firePoint and the correct way around
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") | animator.GetCurrentAnimatorStateInfo(0).IsName("Fire") && animator.GetFloat("xinput") < 0.3f)
         animator.Play("Fire",0);
+        shootingSound.Play();
     }
 }
